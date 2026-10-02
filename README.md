@@ -56,11 +56,27 @@ as demais ficam visíveis, com o motivo da bloqueio.
 │   └── style.css       # atmosfera, cenas, responsivo
 ├── js/
 │   ├── data.js         # roteiro: cenas, pistas, deduções, finais
+│   ├── arte.js         # as nove ilustrações SVG, uma por ambiente
 │   ├── game.js         # motor: navegação, caderno, confronto, progressão
 │   └── audio.js        # ambiente sonoro via WebAudio, sem arquivos
 └── tests/
-    └── fluxo.test.js   # valida o grafo do roteiro (node tests/fluxo.test.js)
+    ├── fluxo.test.js   # valida o grafo do roteiro
+    └── arte.test.js    # valida os SVGs contra os dados das cenas
 ```
+
+### Sobre a arte
+
+Não há uma única imagem no repositório. Cada ambiente é um SVG escrito à mão em
+`js/arte.js`, no espaço de coordenadas `0 0 100 100` — que é exatamente o mesmo
+espaço em porcentagem usado pelos hotspots. Por isso o desenho e o clique
+coincidem sem nenhum ajuste: o objeto em `x=10` fica a 10% da largura.
+
+Cada objeto que pode ser examinado leva `data-arte="id-do-hotspot"`. Ao passar o
+mouse sobre o ponto clicável, o resto da cena escurece e só o objeto fica aceso,
+o que diz o que está em jogo antes de você clicar.
+
+Os gradientes de fundo do CSS continuam existindo como camada de trás: se o
+desenho falhar por algum motivo, a cena não fica preta.
 
 Sem dependências, sem build. O que está no repositório é o que roda no navegador.
 O som é sintetizado em tempo real com WebAudio: um drone grave por ambiente,
@@ -69,12 +85,19 @@ vento filtrado e o chiado de rádio que não pega sinal nenhum.
 ## Verificação
 
 ```bash
-node tests/fluxo.test.js
+node tests/fluxo.test.js   # grafo do roteiro
+node tests/arte.test.js    # SVGs contra os dados das cenas
 ```
 
-Confere se toda pista é obtenível, se nenhuma dedução é impossível de montar, se
-todo hotspot é alcançável a partir do estado inicial e se os sete finais
-desbloqueiam. Também valida referências quebradas e hotspots fora da área clicável.
+`fluxo.test.js` confere se toda pista é obtenível, se nenhuma dedução é impossível
+de montar, se todo hotspot é alcançável a partir do estado inicial e se os sete
+finais desbloqueiam.
+
+`arte.test.js` renderiza os nove SVGs, valida balanceamento de tags, gradientes
+duplicados, referências a `url(#id)` sem definição, e confere que todo hotspot
+não-conversa tem um objeto desenhado com o `data-arte` correspondente. Gera também
+`.preview/` com os SVGs isolados e uma página de contato com os pontos clicáveis
+por cima, para inspeção visual.
 
 ## Como contribuir
 
@@ -82,7 +105,7 @@ Diretrizes completas em [`AGENTS.md`](./AGENTS.md). Resumindo: **toda alteraçã
 ser commitada e enviada para o GitHub.**
 
 ```bash
-node tests/fluxo.test.js          # rode antes de commitar
+node tests/fluxo.test.js && node tests/arte.test.js   # rode antes de commitar
 git status                        # revise o que mudou
 git add <arquivos>
 git commit -m "Mensagem curta no imperativo"

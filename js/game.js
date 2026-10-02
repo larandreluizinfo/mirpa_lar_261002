@@ -4,6 +4,7 @@ import {
   CREDITOS, PISTAS, DEDUCOES, SUSPEITOS, CENAS, PRIMEIROS, FINAIS, EPILOGO
 } from './data.js';
 import { Ambiente } from './audio.js';
+import { desenhar } from './arte.js';
 
 const CHAVE_SAVE = 'ultimo-relato/v1';
 
@@ -31,6 +32,9 @@ const estado = {
 };
 
 const ambiente = new Ambiente();
+
+/* ids dos objetos que acabaram de ser examinados, para o desenho reagir */
+const arteAnterior = new Set();
 
 /* ---------- utilidades ---------- */
 
@@ -119,6 +123,15 @@ function susto() {
   ambiente.susto();
 }
 
+/* acende o objeto desenhado que o hotspot aponta */
+function acenderArte(id, aceso) {
+  const palco = document.getElementById('palco-ambiente');
+  const n = palco?.querySelector(`[data-arte="${id}"]`);
+  if (!n) return;
+  n.classList.toggle('aceso', aceso);
+  palco.classList.toggle('destaque', aceso);
+}
+
 function marcarNovos(ids) {
   ids.forEach((id) => {
     const n = document.querySelector(`.hotspot[data-id="${id}"]`);
@@ -140,9 +153,18 @@ function renderCena(manterPainel = false) {
   $('palco-ambiente').className = `palco__ambiente ${cena.classe}`;
   $('objetivo').textContent = OBJETIVOS[cena.id] || '';
 
+  $('palco-arte').innerHTML = desenhar(cena.id);
+  arteAnterior.forEach((id) => {
+    const n = $('palco-arte').querySelector(`[data-arte="${id}"]`);
+    if (n) n.classList.add('aceso');
+  });
+  arteAnterior.clear();
+
   const anteriores = [...document.querySelectorAll('.hotspot')].map((b) => b.dataset.id);
   const alvo = $('palco-hotspots');
   alvo.innerHTML = '';
+
+const arena = document.getElementById('palco-ambiente');
 
   const novos = [];
   cena.hotspots.forEach((h) => {
@@ -155,6 +177,14 @@ function renderCena(manterPainel = false) {
     if (examinou(h.id)) b.classList.add('hotspot--visto');
     b.appendChild(el('span', 'hotspot__dica', h.rotulo));
     b.addEventListener('click', () => examinar(h.id));
+
+    if (arena) {
+      b.addEventListener('pointerenter', () => acenderArte(h.id, true));
+      b.addEventListener('focus', () => acenderArte(h.id, true));
+      b.addEventListener('pointerleave', () => acenderArte(h.id, false));
+      b.addEventListener('blur', () => acenderArte(h.id, false));
+    }
+
     alvo.appendChild(b);
     if (!anteriores.includes(h.id)) novos.push(h.id);
   });
@@ -220,6 +250,7 @@ function examinar(id) {
 
   if (!examinou(id)) {
     estado.examinadas.push(id);
+    arteAnterior.add(id);
     ambiente.ambiente('pagina');
   }
 

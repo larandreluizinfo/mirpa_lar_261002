@@ -266,6 +266,51 @@ body { position: relative; }
   min-height: 340px;
 }
 
+.palco__arte {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.palco__desenho {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* objeto desenhado reage ao hotspot */
+[data-arte] {
+  transition: filter 320ms ease, opacity 320ms ease;
+}
+
+.destaque [data-arte] {
+  opacity: 0.45;
+}
+
+.destaque [data-arte].aceso {
+  opacity: 1;
+  filter: drop-shadow(0 0 3px rgba(216, 213, 205, 0.85))
+          drop-shadow(0 0 9px rgba(194, 80, 74, 0.55));
+}
+
+.palco__nevoa {
+  position: absolute;
+  inset: -20%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.5;
+  background:
+    radial-gradient(ellipse 60% 26% at 22% 74%, rgba(190, 200, 205, 0.055), transparent 70%),
+    radial-gradient(ellipse 50% 20% at 72% 66%, rgba(190, 200, 205, 0.045), transparent 70%),
+    radial-gradient(ellipse 70% 22% at 48% 88%, rgba(190, 200, 205, 0.04), transparent 72%);
+  animation: nevoa 34s ease-in-out infinite alternate;
+}
+
+@keyframes nevoa {
+  from { transform: translateX(-2%) scale(1); }
+  to   { transform: translateX(2%) scale(1.04); }
+}
+
 .palco__legenda {
   position: absolute;
   top: 0;
@@ -278,11 +323,12 @@ body { position: relative; }
   line-height: 1.6;
   color: var(--texto-fraco);
   text-shadow: 0 2px 14px #000;
-  z-index: 3;
+  z-index: 5;
   pointer-events: none;
+  text-shadow: 0 2px 14px #000, 0 0 24px rgba(0, 0, 0, 0.9);
 }
 
-.palco__hotspots { position: absolute; inset: 0; z-index: 4; }
+.palco__hotspots { position: absolute; inset: 0; z-index: 6; }
 
 .hotspot {
   position: absolute;
@@ -351,7 +397,7 @@ body { position: relative; }
   opacity: 0;
   pointer-events: none;
   transition: all 220ms ease;
-  z-index: 5;
+  z-index: 7;
 }
 
 .hotspot:hover .hotspot__dica,
@@ -362,10 +408,12 @@ body { position: relative; }
 
 /* Fundos das cenas */
 
+/* o gradiente de fundo fica atras do desenho, comoFallback e vinheta */
 .palco__ambiente::before {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 0;
   transition: background var(--transicao), opacity var(--transicao);
 }
 
@@ -427,7 +475,17 @@ body { position: relative; }
   inset: 0;
   pointer-events: none;
   background: radial-gradient(ellipse at 30% 40%, rgba(255, 255, 255, 0.028), transparent 55%);
-  z-index: 2;
+  z-index: 3;
+}
+
+/* a vinheta fica por cima da arte, nao do texto */
+.palco__ambiente::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background: radial-gradient(ellipse 90% 80% at 50% 45%, transparent 40%, rgba(0, 0, 0, 0.5) 100%);
 }
 
 /* ---------- Painel de narração ---------- */
