@@ -1,91 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mirpa_lar_261002</title>
-  <style>
-    :root {
-      --bg: #0d1117;
-      --card: #161b22;
-      --border: #30363d;
-      --text: #e6edf3;
-      --muted: #8b949e;
-      --accent: #58a6ff;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-    main {
-      max-width: 640px;
-      width: 100%;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 40px;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-    p.subtitle {
-      color: var(--muted);
-      margin-bottom: 32px;
-    }
-    h2 {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin-bottom: 16px;
-      font-weight: 600;
-    }
-    ul.team {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-    ul.team li {
-      background: rgba(88, 166, 255, 0.1);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 6px 16px;
-      font-size: 0.9rem;
-    }
-    footer {
-      margin-top: 32px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Último Relato</title>
+<meta name="description" content="Jogo de terror, suspense e investigação em nove ambientes de Brejinho: investigue um afogamento de 1997 e deduza quem mandou fechar o portão.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <main>
-    <h1>mirpa_lar_261002</h1>
-    <p class="subtitle">Projeto hospedado com GitHub Pages</p>
-    <h2>Criado por</h2>
-    <ul class="team">
-      <li>Mariana</li>
-      <li>Isabela</li>
-      <li>Rhavy</li>
-      <li>Pietra</li>
-      <li>Antonella</li>
-    </ul>
-    <footer>mirpa_lar_261002 &mdash; 2026</footer>
-  </main>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="vinheta" aria-hidden="true"></div>
+
+<main id="app">
+
+  <section class="tela tela--titulo ativa" id="tela-titulo">
+    <div class="titulo__conteudo">
+      <p class="titulo__sobretitulo">Um jogo de investigação</p>
+      <h1 class="titulo__nome">O Último<br>Relato</h1>
+      <p class="titulo__lema">Em 1997, a água subiu sobre uma vila com moradores dentro.<br>
+        Em 2026, uma mulher morrendo gravou quarenta e sete segundos de áudio<br>
+        e endereçou a você.</p>
+      <div class="titulo__acoes">
+        <button class="btn btn--primario" id="btn-comecar">Começar a investigação</button>
+        <button class="btn btn--fantasma" id="btn-continuar" hidden>Continuar de onde parei</button>
+      </div>
+      <p class="titulo__aviso">Use fones de ouvido. Contém sons, sustos e o aviso prévio de que <em>nada</em> nesta história foi resolvido em 72 horas.</p>
+      <p class="titulo__creditos">
+        Criado por <span id="titulo-autores"></span>
+      </p>
+    </div>
+  </section>
+
+  <section class="tela tela--jogo" id="tela-jogo">
+
+    <header class="hud">
+      <div class="hud__local">
+        <h2 id="hud-cena">—</h2>
+        <p id="hud-hora">—</p>
+      </div>
+      <nav class="hud__nav">
+        <button class="btn-icone" id="btn-caderno" title="Caderno de pistas">
+          <span class="btn-icone__contador" id="contador-pistas">0</span>
+          Caderno
+        </button>
+        <button class="btn-icone" id="btn-deducoes" title="Quadro de deduções">
+          <span class="btn-icone__contador" id="contador-deducoes">0</span>
+          Deduções
+        </button>
+        <button class="btn-icone btn-icone--som" id="btn-som" title="Som">Som: ligado</button>
+      </nav>
+    </header>
+
+    <div class="palco">
+      <div class="palco__ambiente" id="palco-ambiente">
+        <p class="palco__legenda" id="palco-legenda"></p>
+        <div class="palco__hotspots" id="palco-hotspots"></div>
+        <div class="palco__brilho" aria-hidden="true"></div>
+      </div>
+
+      <aside class="painel" id="painel">
+        <p class="painel__texto" id="painel-texto"></p>
+        <div class="painel__acoes" id="painel-acoes"></div>
+      </aside>
+    </div>
+
+    <footer class="rodape-cena">
+      <p class="objetivo" id="objetivo"></p>
+      <div class="mapa" id="mapa-cenas"></div>
+    </footer>
+
+  </section>
+
+  <section class="tela tela--folha" id="tela-caderno" hidden>
+    <header class="folha__topo">
+      <h2>Caderno de pistas</h2>
+      <button class="btn btn--fantasma" data-fechar>Voltar</button>
+    </header>
+    <p class="folha__intro">Duas pistas que contam a mesma história, lado a lado, às vezes viram uma verdade. Arraste uma para a outra.</p>
+    <div class="caderno">
+      <ul class="pistas" id="lista-pistas"></ul>
+      <section class="ligar">
+        <div class="ligar__slots">
+          <div class="slot" id="slot-a" data-slot="a"><span>Primeira pista</span></div>
+          <div class="slot__mais">+</div>
+          <div class="slot" id="slot-b" data-slot="b"><span>Segunda pista</span></div>
+        </div>
+        <button class="btn btn--primario" id="btn-ligar" disabled>Confrontar pistas</button>
+        <p class="ligar__msg" id="ligar-msg"></p>
+      </section>
+    </div>
+  </section>
+
+  <section class="tela tela--folha" id="tela-deducoes" hidden>
+    <header class="folha__topo">
+      <h2>Quadro de deduções</h2>
+      <button class="btn btn--fantasma" data-fechar>Voltar</button>
+    </header>
+    <div class="deducoes" id="lista-deducoes"></div>
+  </section>
+
+  <section class="tela tela--final" id="tela-final" hidden>
+    <div class="final" id="final-conteudo"></div>
+    <div class="final__creditos">
+      <h3>O Último Relato</h3>
+      <p>Criado por <span id="final-autores"></span></p>
+      <div class="final__botoes">
+        <button class="btn btn--primario" id="btn-reiniciar">Jogar de novo com outras escolhas</button>
+        <button class="btn btn--fantasma" data-fechar-final>Voltar ao início</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="fundo-flash" id="flash" aria-hidden="true"></div>
+  <div class="torrada" id="torrada" role="status" aria-live="polite" hidden></div>
+
+</main>
+
+<script type="module" src="js/game.js"></script>
 </body>
 </html>
