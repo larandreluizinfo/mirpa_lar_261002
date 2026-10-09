@@ -7,72 +7,72 @@ export const PISTAS = {
   'c-fita': {
     nome: 'Cartão de memória',
     tipo: 'Objeto',
-    texto: 'Um cartão SD sem etiqueta, dentro de um envelope pardo sem remetente. Quarenta e sete segundos de áudio. Uma voz de mulher idosa, quase um sussurro, que se apresenta como "o último relato" antes de ser interrompida por um choro.'
+    texto: 'Um cartão SD sem etiqueta, dentro de um envelope pardo sem remetente, selado com fita por cima do selo. Quarenta e sete segundos de áudio. Uma voz de mulher idosa, quase um sussurro, que se apresenta como "o último relato" antes de ser interrompida por um choro fundo, abafado, de quem tapa a boca com a mão. No fim, antes de cortar, dá para ouvir uma cadeira arrastada.'
   },
   'c-depoimento': {
     nome: 'Papel dobrado em quatro',
     tipo: 'Documento',
-    texto: 'Escrito à mão, com a letra tremendo de quem escreve rápido demais: "Ele não estava só naquele dia. Ninguém me believeu e agora ninguém pergunta." Sem assinatura. O papel cheira a fumo de fogão.'
+    texto: 'Uma folha de caderno arrancada, dobrada em quatro até a dobra virar rasgo. A caneta bateu tão forte que furou o verso. "Ele não estava só naquele dia. Ninguém me acreditou e agora ninguém pergunta." Sem assinatura. O papel está gasto de ser guardado e tirado de volta, cheira a fumo de fogão e a café velho — e no canto inferior, traçado à pressa com a mesma caneta, há o desenho de uma chave de cabeça quadrada.'
   },
   'c-recorte': {
     nome: 'Recorte de jornal (1998)',
     tipo: 'Documento',
-    texto: '"MENINO DE 9 ANOS SOME NO AÇUDE DE BREJINHO — Família deixa o caso após 72 horas." A manchete ocupa meia página. A outra metade é um anúncio de gado. Não há uma única foto do menino.'
+    texto: '"MENINO DE 9 ANOS SOME NO AÇUDE DE BREJINHO — Família deixa o caso após 72 horas." A manchete ocupa meia página, em corpo grande. A outra metade é anúncio de gado, com uma vaca de perfil. Não há uma única foto do menino, nem do açude, nem da família — só a manchete e o gado. No rodapé, o nome do repórter, com a assinatura reduzida a uma inicial.'
   },
   'c-foto': {
     nome: 'Cópia de fotografia',
     tipo: 'Objeto',
-    texto: 'Um grupo de seis pessoas diante de uma comporta. Uma delas tem o rosto retangularmente raspado — não desbotado, raspado, com a unha. Atrás delas, na parede, um mapa da represa onde se lê ALAGADO - 1997.'
+    texto: 'Um grupo de seis pessoas de pé sobre uma comporta, flash direto, sombras duras nas pernas. Cinco estão olhando para a lente; a sexta, de lado, com as mãos no bolso. O rosto dessa sexta foi raspado num retângulo perfeito — não desbotado pelo tempo, raspado, com a unha. Atrás do grupo, na parede, um mapa da represa com uma área inteira riscada e legível: ALAGADO - 1997.'
   },
   'c-mapa': {
     nome: 'Carta náutica da represa',
     tipo: 'Documento',
-    texto: 'Folha dobrada, amarelada, de uma edição do mapa de Brejinho. Uma área inteira riscada a lápis e marcada "ALAGADO 1997". Uma casa e um pomar aparecem debaixo d’água. Era a vila antiga. Havia uma escola.'
+    texto: 'Folha dobrada em quatro, amarelada nas dobras, de uma edição antiga do mapa de Brejinho. Uma área inteira está riscada a lápis e marcada "ALAGADO 1997", com o traço reforçado por cima várias vezes. Debaixo do risco dão para ver uma casa, um pomar e um retângulo com um ponto no meio que é a marca de uma escola. Havia gente morando ali dentro quando a água subiu.'
   },
   'c-pegadas': {
     nome: 'Marcas na margem',
     tipo: 'Pista de campo',
-    texto: 'Duas linhas paralelas na lama, dezoito centímetros de distância, entrando na água. Não são pegadas. São marcas de arrasto — e não foi a água que as fez, porque a lama ali está acima da linha do mare.'
+    texto: 'Duas linhas paralelas na lama, fundas, a dezoito centímetros uma da outra, entrando na água e terminando dentro dela. A lama é mole no meio das linhas e endurecida nas bordas — o peso passou e secou ali. Não são pegadas: são marcas de arrasto. E não foi a água que as fez, porque aquela faixa de lama está acima da linha que a represa alcança.'
   },
   'c-boia': {
     nome: 'Boia de pesca',
     tipo: 'Objeto',
-    texto: 'Presa num galho seco, posicionada com cuidado demais para ser acaso. Dentro dela, um frasco de vidro com um caderno infantil dentro: capa dura, nome "T. OLIVEIRA", dentro, só desenhos. E uma lista de vacinas impressa em papel de farmácia.'
+    texto: 'Presa num galho seco, virada para a margem, posicionada com um cuidado que ninguém tem por acaso. A corda que a amarra está nova. Dentro dela, um frasco de vidro; dentro do frasco, um caderno infantil de capa dura, o nome "T. OLIVEIRA" escrito a giz de cera na diagonal, e só desenhos entre as páginas. Dobrada na contracapa, uma lista de vacinas impressa em papel de farmácia, com o carimbo de um posto que fechou em 2001.'
   },
   'c-chave': {
     nome: 'Chave de latão',
     tipo: 'Objeto',
-    texto: 'Pequena, pesada, sem etiqueta, com um número de série estampado no corpo. Não é chave de casa. É chave de porta de serviço — o tipo que se usa em casa de bombas e galpão de água.'
+    texto: 'Pequena, fria, mais pesada do que o tamanho promete, com um número de série estampado no corpo e a cabeça quadrada. O metal já foi polido de tanto girar e há graxa velha no dente. Não é chave de casa: é chave de porta de serviço, o tipo que se usa em casa de bombas e em galpão de água. A que desenharam na margem do papel dobrado tem exatamente esta cabeça.'
   },
   'c-lanca': {
     nome: 'Lancha a motor',
     tipo: 'Objeto',
-    texto: 'Amarrada na sombra da margem, coberta com lona e folhas. O motor está limpo demais para quem não usa aquilo há semanas. A placa foi raspada e repintada por cima — dá para ver a camada antiga por baixo.'
+    texto: 'Amarrada na sombra da margem, coberta com lona e um punhado de folhas jogadas por cima para disfarçar. A corda está ensopada e o casco tem uma linha de limo só na metade de baixo. O motor, por outro lado, está limpo, seco e sem teia em parte alguma. A placa foi raspada com escova e repintada por cima — dá para ver a camada velha aparecendo embaixo do branco, e os primeiros dois dígitos continuam legíveis.'
   },
   'c-escala': {
     nome: 'Folha de escala',
     tipo: 'Documento',
-    texto: 'A escala do portão de operações, mês de setembro de 1997. A linha do dia 12 está inteira riscada por cima, mas ainda se lê por baixo: "Portão fechado às 16h30. Não reabrir. Responsável: A. B." E, ao lado, com outra letra: "por ordem".'
+    texto: 'A escala do portão de operações, setembro de 1997, papel almaço com cabeçalho carimbado. A linha do dia 12 está riscada por cima com régua, mas ainda se lê por baixo, afundada no papel: "Portão fechado às 16h30. Não reabrir. Responsável: A. B." E, ao lado, com outra letra, apertada, de quem escreve de pé: "por ordem". A dobra da folha está marcada onde ela ficou anos presa entre outras.'
   },
   'c-lapide': {
     nome: 'Lápide sem nome',
     tipo: 'Objeto',
-    texto: 'Cimento novo em cima de um canteiro velho, com uma placa sem epitáfio: só "IN MEMORIAM" e uma data. Setembro de 1997. Ela foi colocada três meses antes de o menino entrar na água. O nome sumiu da mesma forma que o rosto da fotografia: raspado, sem pressa, por cima.'
+    texto: 'Cimento claro em cima de um canteiro antigo, ainda com a marca da colher de pedreiro, e uma placa sem epitáfio: só "IN MEMORIAM" e uma data. Setembro de 1997 — três meses antes de o menino entrar na água. O nome foi raspado, sem pressa, com a ponta de alguma coisa, e o raspado na pedra é mais novo que a terra que a cerca. As iniciais do sobrenome ficaram.'
   },
   'c-vhs': {
     nome: 'Fita VHS sem etiqueta',
     tipo: 'Objeto',
-    texto: 'Uma fita de trinta minutos dentro de uma caixa de sapato. Sem etiqueta. A primeira imagem é a sala de estar de uma casa e um relógio de parede marcando 16h20. Alguém estava filmando aquela casa vinte minutos antes de o menino aparecer no portão — e não era o dono da casa filmando.'
+    texto: 'Uma fita de trinta minutos dentro de uma caixa de sapato. Sem etiqueta, mas com um carimbo gasto nas costas: O BREJINHO. A primeira imagem é a sala de estar de uma casa: um sofá de plástico, um relógio de parede marcando 16h20 e a sombra de pernas cruzadas na ponta do quadro. A câmera não se mexe e não fala. Alguém estava filmando aquela casa vinte minutos antes de o menino aparecer no portão — e não era o dono da casa filmando.'
   },
   'c-pneus': {
     nome: 'Impressão de pneu',
     tipo: 'Pista de campo',
-    texto: 'No cascalho da entrada da casa de bombas, meia-impressão de pneu: um desenho de banda larga, com nervuras de fora para dentro. Você já viu esse desenho de pneu em outro lugar hoje. Precisa de alguém que diga o nome dele em voz alta antes de dar nome a isso.'
+    texto: 'No cascalho da entrada da casa de bombas, meia-impressão de pneu na guia de concreto: banda larga, taco fundo, nervuras correndo de fora para dentro. O desenho é de veículo de estrada, não de tractor. Você já viu esse mesmo desenho hoje, em outro lugar, e não é coincidência de estrada de terra. Precisa de alguém que diga o nome desse pneu em voz alta antes de você dar nome ao que está vendo.'
   },
   'c-processo': {
     nome: 'Cópia do processo 97/4412',
     tipo: 'Documento',
-    texto: 'Uma folha datilografada, a segunda via, guardada num envelope pardo. Motion requesting o fechamento do portão "por razones de ordem técnica". A assinatura do delegado Bandeira no campo de ciência da ocorrência. E, no canto, escrito a lápis por outra mão: "a ordem veio impressa. Perguntar quem mandou é trabalho dele."'
+    texto: 'Uma folha datilografada, a segunda via, guardada num envelope pardo com o lacre rasgado. Um requerimento pedindo o fechamento do portão "por razões de ordem técnica" — datilografado com a mesma fita do teclado, com um "e" que não bate com o resto da linha. A assinatura do delegado Bandeira no campo de ciência da ocorrência, firme, sem rasura. E, no canto, a lápis, por outra mão: "a ordem veio impressa. Perguntar quem mandou é trabalho dele."'
   }
 };
 
@@ -121,7 +121,7 @@ export const DEDUCOES = {
   },
   'd-palacete': {
     titulo: 'A lápide veio antes do afogamento',
-    texto: 'Uma lápide sem nome, de setembro de 1997, e a marca de pneu do jeep que passa na frente da casa de bombas depois do fechamento. Juntas elas dizem que o índice de quem morava na vila antiga foi retirado do lugar com a mesma antecedência com que o portão foi fechado. A operação foi Planejada. E planejamento deixa assinatura.',
+    texto: 'Uma lápide sem nome, de setembro de 1997, e a marca de pneu do jeep que passa na frente da casa de bombas depois do fechamento. Juntas elas dizem que o índice de quem morava na vila antiga foi retirado do lugar com a mesma antecedência com que o portão foi fechado. A operação foi planejada. E planejamento deixa assinatura.',
     pistas: ['c-lapide', 'c-pneus'],
     suspeito: 'palacete',
     resolve: 'Alguém com poder sobre a água sabia do que ia acontecer antes de acontecer.'
@@ -131,7 +131,7 @@ export const DEDUCOES = {
     texto: 'A fita começa numa sala de estar e num relógio marcando 16h20. É a mesma sala de estar da fotografia da inauguração, e é vinte minutos antes de o menino aparecer no portão. Quem filmava não estava no portão: estava na casa do Tarcísio, olhando o relógio, esperando alguma coisa acontecer do lado de fora. E guardou a fita numa caixa de sapato de 1997 que ainda está numa prateleira em Brejinho.',
     pistas: ['c-vhs', 'c-foto'],
     suspeito: 'palacete',
-    resolve: 'A operação tinha um comece, e alguém o assistiu do começo.'
+    resolve: 'A operação tinha um começo, e alguém o assistiu do começo.'
   }
 };
 
@@ -173,6 +173,51 @@ export const SUSPEITOS = {
   }
 };
 
+export const ENTIDADES = {
+  afogado: {
+    nome: 'O Afogado',
+    titulo: 'A água sobe o degrau',
+    aproximacao: 'A superfície para de refletir você. Um vulto pequeno, de bermuda, está de pé dentro da água, virado para a margem, com os braços caídos ao lado do corpo. Ele não faz barulho — e é justamente por isso que você entende que ele já está perto. A cada passo dele, a água não respinga.',
+    dica: 'Dona Zulmira disse uma vez: com o menino, o certo era ficar parado e não olhar para a água.',
+    certo: ['Ficar completamente parado e desviar os olhos da água'],
+    errado: ['Correr para a margem', 'Chamá-lo pelo nome', 'Acender a lanterna para ver melhor'],
+    escape: 'Você fica parado e conta até três com os olhos no chão. Quando levanta a cabeça, a água está lisa outra vez — mas a marca de dois pés descalços na lama está mais perto do que estava antes.',
+    morteTitulo: 'A mão de dentro da água',
+    morteTexto: [
+      'Você corre. É o que todo mundo faz, e é exatamente o que ele espera. Ele não corre atrás: ele já está onde você vai chegar.',
+      'A mão é pequena e firme, e o frio sobe do tornozelo para a nuca inteiro antes de você conseguir pensar em respirar. A última coisa que você vê é a superfície lisa, perfeitamente lisa, se fechando por cima de você.'
+    ]
+  },
+  lavadeira: {
+    nome: 'A Lavadeira',
+    titulo: 'Alguém bate roupa atrás do muro',
+    aproximacao: 'Não chove, mas há um som de pano batendo em pedra, compassado, vindo de trás dos muros. Dobrando o muro, há uma mulher de costas, ajoelhada, lavando uma roupa branca que não fica limpa de jeito nenhum. Ela não projeta sombra, e a roupa está sempre suja.',
+    dica: 'A lenda da região diz que a lavadeira não olha para quem não olha para ela.',
+    certo: ['Baixar os olhos e recuar sem dizer nada'],
+    errado: ['Perguntar o nome dela', 'Ajudá-la a torcer a roupa', 'Tocar no ombro dela'],
+    escape: 'Você recua de costas, com os olhos no chão, até o som do pano parar. Quando para, você levanta a cabeça: o quintal está vazio, e a pedra onde ela batia a roupa está seca — seca como se nunca tivesse sido usada.',
+    morteTitulo: 'A roupa nunca fica limpa',
+    morteTexto: [
+      'Ela vira a cabeça devagar e não tem rosto — só o pano, dobrado sobre o lugar do rosto, do mesmo jeito que se cobre quem não teve tempo de ser enterrado.',
+      'O som de pano batendo em pedra continua depois que você cai — a noite inteira, todo o resto da noite, e você o escuta de dentro do chão.'
+    ]
+  },
+  cao: {
+    nome: 'A Coisa do Portão',
+    titulo: 'A corrente arrasta no cimento',
+    aproximacao: 'Não é cachorro. É maior, e o som da corrente é do mesmo metal do portão. Ela para sempre no limite da luz, respirando devagar, e não avança enquanto você olha para ela — só quando você não olha.',
+    dica: 'A regra do portão é a de sempre: não se viram as costas para o que morde.',
+    certo: ['Andar de ré, sem virar as costas nem correr'],
+    errado: ['Correr para a estrada', 'Jogar a chave de latão na água', 'Acender a luz da casa de bombas'],
+    escape: 'Você anda de ré, um passo de cada vez, sem tirar os olhos da massa escura. Ela acompanha até a soleira. Quando seu pé encontra o cascalho da estrada, a corrente para de arrastar — e quando você finalmente vira, não há nada no portão além da corrente fina que sempre esteve lá.',
+    morteTitulo: 'Ela guarda o que está fechado',
+    morteTexto: [
+      'Você corre. A corrente não te alcança — a coisa alcança. É rápido demais para ter corpo e alto demais para ter cabeça.',
+      'O último som é o seu próprio nome, dito com a voz de alguém que mora aqui há vinte e oito anos e nunca teve com quem conversar.'
+    ]
+  }
+};
+
 export const CENAS = [
   {
     id: 'estrada',
@@ -184,19 +229,19 @@ export const CENAS = [
     hotspots: [
       {
         id: 'e-placa', rotulo: 'Placa de entrada', x: 10, y: 44,
-        texto: 'BREJINHO — FUNDAÇÃO 1964 — POP. 214. Alguém riscou o número e escreveu 187 por cima. Enquanto o número novo esteve lá, ninguém corrigiu.'
+        texto: 'Chapa de metal que já foi branca, hoje cor de ferrugem nas bordas. BREJINHO — FUNDAÇÃO 1964 — POP. 214. O "214" foi riscado com alguma coisa de ponta e "187" foi escrito por cima com tinta que já descascou em gotas. Ninguém repintou. Enquanto o número novo esteve ali, todo mundo passou por baixo dele e não corrigiu.'
       },
       {
         id: 'e-capela', rotulo: 'Capela', x: 64, y: 22,
-        texto: 'Porta trancada com corrente. No vidro, um aviso de missa de domingo escrito há anos. No degrau, um cigarro ainda quente: alguém esteve aqui há menos de dez minutos. Ninguém deveria estar acordado.'
+        texto: 'Porta de madeira, trancada por fora com uma corrente fina e um cadeado pequeno. No vidro fosco, colado por dentro com fita amarelada, um aviso de missa de domingo com data de anos atrás. No degrau de cimento, um cigarro amassado, ainda morno, com a marca de um dente na ponta. Alguém esteve aqui há menos de dez minutos — e ninguém deveria estar acordado a esta hora.'
       },
       {
         id: 'e-portao', rotulo: 'Portão da represa', x: 80, y: 58,
-        texto: 'Grade de ferro com camada grossa de ferrugem e uma corrente nova prendendo a folha direita. Corrente nova em um portão que ninguém abre desde 1997. Alguém anda cuidando de fechar.'
+        texto: 'Grade de ferro com a ferrugem subindo em placas, sólida. A folha esquerda está soldada; a direita está presa por uma corrente que não combina com o resto: grossa, engraxada, sem um ponto de ferrugem. Corrente nova num portão que ninguém abre desde 1997. Alguém anda passando óleo aqui, de vez em quando, só para garantir que continue fechado.'
       },
       {
         id: 'e-caseiro', rotulo: 'Caseiro da casa de bombas', x: 30, y: 64,
-        texto: 'Uma construção de madeira no meio do caminho, com uma luz acesa às sete da manhã. O caseiro não acena, não pergunta, não se oferece. Só acompanha o carro com os olhos até o ponto onde a estrada curva.',
+        texto: 'Uma construção de madeira no meio do caminho, com uma luz acesa às sete da manhã e uma fumaça fina saindo do cano. Na janela, um vulto passa uma vez e não volta. O caseiro não acena, não pergunta, não se oferece — só acompanha o carro com os olhos até o ponto onde a estrada curva, e continua olhando para o lugar depois que o carro já sumiu.',
         primeiro: 'z-primeiro'
       }
     ]
@@ -208,20 +253,26 @@ export const CENAS = [
     classe: 'bg-acude',
     legenda: 'A represa é bonita de um jeito errado. A água não se move.',
     texto: 'Do outro lado da água, uma parede de tijolo e uma torre de sineiro saem da represa como se alguém tivesse levantado o açude em cima delas. Nada disso deveria estar visível. Ainda assim dá para ver a torre, e dá para ver que o sineiro está sem badalo.',
+    perigo: { entidade: 'afogado', limite: 4 },
     hotspots: [
       {
         id: 'a-agua', rotulo: 'Água do açude', x: 48, y: 58,
-        texto: 'Plana, espelhada, sem ondulação. Um peixe salta longe e o barulho chega meio segundo atrasado, como se a água tivesse que pensar antes de devolver o som.'
+        texto: 'Plana, espelhada, sem ondulação nenhuma — nem a do vento que você está sentindo na cara. As margens estão definidas como se alguém tivesse acabado de alisar a superfície com uma régua. Um peixe salta longe, e o barulho chega meio segundo atrasado, como se a água não devolvesse o som na hora, como se pensasse antes de responder.'
       },
       {
         id: 'a-muro', rotulo: 'Parede submersa', x: 22, y: 42,
         texto: 'Uma janela de vidro empoeirado, aberta para dentro. Atrás dela, o contorno de uma cama. Encostado na parede, debaixo d’água, um mapa náutico enrolado em plástico. Não tem como ler de onde você está, mas dá para ver que é um mapa.',
-        primeiro: 'a-muro', dá: 'c-mapa'
+        primeiro: 'a-muro', dá: 'c-mapa', atrai: true
       },
       {
         id: 'a-boia', rotulo: 'Galho com boia', x: 70, y: 74,
-        texto: 'Uma boia de pesca branca, presa num galho seco, posicionada com um cuidado que ninguém tem por acaso. Dentro, um frasco de vidro. Dentro do frasco, um caderno de capa dura.',
-        primeiro: 'a-boia', dá: 'c-boia'
+        texto: 'Uma boia de pesca branca, presa num galho seco, virada para a margem, posicionada com um cuidado que ninguém tem por acaso. Na ponta do cabo, um frasco de vidro vedado com cera de vela, amarrado com arame. Chacoalhando de leve dá para ouvir papel batendo dentro. Não dá para ver o que é sem abrir.',
+        abre: {
+          verbo: 'Romper a cera e abrir o frasco',
+          texto: 'A cera cede num estalo. Dentro do frasco, dobrado em quatro e protegido por uma folha de plástico, está um caderno infantil de capa dura: nome "T. OLIVEIRA" a giz de cera, desenhos entre as páginas e, na contracapa, a lista de vacinas de um posto que fechou em 2001. A boia foi posta ali para ser achada — e o frasco foi vedado para durar.',
+          dá: 'c-boia'
+        },
+        primeiro: 'a-boia', atrai: true
       },
       {
         id: 'a-margem', rotulo: 'Margem de lama', x: 34, y: 84,
@@ -239,34 +290,44 @@ export const CENAS = [
     classe: 'bg-bombas',
     legenda: 'Concreto, ferrugem e um rádio ligado sem sinal nenhum.',
     texto: 'A construção fica no ponto mais alto da margem, de onde se vê o portão inteiro. Porta de ferro, janela quebrada, painel de engrenagens parado. Alguém deixou o rádio ligado. Sem portadora, sem estática que organize: só chiado, do jeito que um rádio fica quando está ligado há muito tempo para uma coisa que não é escutar.',
+    perigo: { entidade: 'cao', limite: 5 },
+    bloqueio: {
+      exige: ['c-depoimento'],
+      texto: 'A porta de ferro da casa de bombas tem cadeado. O papel dobrado em quatro que Dona Zulmira guardava traz, no canto, o desenho de uma chave de cabeça quadrada — e é essa chave que abre aqui.'
+    },
     hotspots: [
       {
         id: 'b-porta', rotulo: 'Porta de ferro', x: 20, y: 50,
-        texto: 'Fechada. A fechadura tem um arranhão antigo em volta, de chave que já girou mil vezes. A soleira tem areia trazida do cascalho da entrada — e, junto da porta, meia-impressão de pneu que não pertence a nenhum carro que deveria vir aqui.',
+        texto: 'Fechada, e a fechadura tem um arranhão circular em volta, do tipo que a chave deixa quando gira mil vezes no escuro. A soleira de cimento está salpicada de cascalho claro, trazido de outro chão — do cascalho da entrada. Junto da porta, meia-impressão de pneu de banda larga, com as nervuras marcadas de fora para dentro. Nenhum carro que deveria vir aqui tem esse pneu.',
         dá: 'c-pneus'
       },
       {
         id: 'b-chave', rotulo: 'Chaveiro de pregos', x: 34, y: 34,
-        texto: 'Um prego torto na parede com um chaveiro de três chaves: uma de tractor, uma de casa e uma de latão sem etiqueta. A de latão tem o mesmo peso morto das chaves que ficam em tasca do chão de pedra, e o mesmo número de série estampado.',
+        texto: 'Um prego torto na parede segura um chaveiro de metal com três chaves: uma de tractor, uma de porta de casa e uma de latão, cabeça quadrada, sem etiqueta. A de latão é a mais gasta de todas — e o buraco não tem areia nem teia, como se alguém tirasse e devolvesse essa chave toda semana.',
         dá: 'c-chave'
       },
       {
         id: 'b-alvara', rotulo: 'Placa na parede', x: 66, y: 26,
-        texto: 'Alumínio oxidado, aparafusado no reboco: "OPERAÇÃO DE ALAGAMENTO CONTROLADO — SET/97 — VILA ANTIGA". Tem nome de firma de engenharia, número de processo e a assinatura do responsável técnico. Alguém tentou raspar a assinatura. Tentou por cima e desistiu na metade.'
+        texto: 'Placa de alumínio oxidado, aparafusada no reboco, com os cantos dobrados. "OPERAÇÃO DE ALAGAMENTO CONTROLADO — SET/97 — VILA ANTIGA". Abaixo, o nome de uma firma de engenharia, um número de processo e a assinatura do responsável técnico. Alguém tentou raspar a assinatura com metal: alguns traços sumiram, outros só ficaram brilhantes. Desistiram na metade — como quem percebe, no meio, que raspar também deixa registro.',
       },
       {
         id: 'b-escala', rotulo: 'Mesa de comando', x: 62, y: 62,
-        texto: 'Uma mesa com um copo virado, uma caneta sem tampa e uma folha datilografada presa por um peso de pedra. É a folha de escala do portão. A linha do dia 12 está riscada por cima, mas a leitura de baixo ainda aparece.',
+        texto: 'Uma mesa de madeira com um copo emborcado sobre um círculo de umidade, uma caneta Bic sem tampa e uma folha datilografada presa por uma pedra de rio. A pedra é grande demais para o papel — quem pôs aquilo ali queria a folha parada, não queria escondê-la. Perto do copo, um cinzeiro com três pontas de cigarro, todas apagadas no mesmo lugar.',
         dá: 'c-escala'
       },
       {
         id: 'b-lanca', rotulo: 'Lona encostada na parede', x: 86, y: 46,
-        texto: 'Uma lona molhada, puxada para fora. Debaixo, um focinho de fliper. Ninguém guarda uma lancha coberta de lona dentro de casa de bombas se a lancha não mora ali.',
-        dá: 'c-lanca'
+        texto: 'Uma lona azul desbotada, cobrindo um volume comprido e baixo encostado na parede, presa por um cabo de náilon. Uma aba está solta e ainda molhada, como se alguém tivesse entrado debaixo dela há pouco e não tivesse se dado ao trabalho de fechar de novo. Debaixo da lona aparece um vinco de casco que brilha.',
+        abre: {
+          verbo: 'Puxar a lona para o lado',
+          texto: 'A lona cai de uma vez e levanta poeira. Debaixo está uma lancha a motor, coberta de limo só na metade do casco. O motor, por outro lado, está limpo, seco e sem teia em parte nenhuma, com um pano dobrado no lugar da vela. A placa foi raspada com escova e repintada por cima, e os dois primeiros dígitos continuam legíveis sob o branco novo.',
+          dá: 'c-lanca'
+        },
+        atrai: true
       },
       {
         id: 'b-radio', rotulo: 'Rádio', x: 40, y: 74,
-        texto: 'Um rádio de pilhas apoiado no parapeito. Ligado. Você muda de estação e ele chia igual em todas. Puxa o plugue e o chiado continua por dois segundos, como se alguma coisa tivesse que terminar de acontecer antes de poder parar.'
+        texto: 'Um rádio de pilhas apoiado no parapeito, sintonizado entre duas estações. Ligado, quente atrás, com um pano dobrado embaixo para não vibrar. Você gira o dial devagar: o chiado é o mesmo em todas as frequências, só muda de altura. Puxa a tomada e o chiado continua por dois segundos, como se alguma coisa precisasse terminar de acontecer antes de poder parar.',
       }
     ]
   },
@@ -281,26 +342,26 @@ export const CENAS = [
     hotspots: [
       {
         id: 'z-1', rotulo: 'O que você reconhece nesta voz?', x: 16, y: 28,
-        texto: 'Ela olha para o cartão na sua mão por tempo demais. "É a Marieta." Depois, mais baixo: "A Marieta tá morrendo. Por isso que ela mandou isso pra você e não pro delegado." E pede que você não faça uma pergunta óbvia.',
+        texto: 'Ela olha para o cartão na sua mão por tempo demais, sem piscar, e enxuga as mãos no avental antes de responder. "É a Marieta." Depois, mais baixo, quase para dentro: "A Marieta tá morrendo. Por isso que ela mandou isso pra você e não pro delegado." Antes que você pergunte, ela balança a cabeça uma vez — o gesto de quem já ouviu essa pergunta e não vai respondê-la.',
         primeiro: 'z-1', dá: 'c-depoimento'
       },
       {
         id: 'z-2', rotulo: 'Quem tinha acesso à casa de bombas?', x: 16, y: 46,
-        texto: '"Tinha o Zelão. Só o Zelão." Ela pega um saleiro e vira na mão sem necessidade. "E tinha o carro do delegado, que entrava pela parte de trás quando não queria registro de passagem. Os dois saíam por ali. Sempre juntos."',
+        texto: '"Tinha o Zelão. Só o Zelão." Ela pega o saleiro da mesa e vira na mão sem necessidade, e põe de volta sem que ninguém tenha pedido. "E tinha o carro do delegado, que entrava pela parte de trás da casa de bombas quando não queria registro de passagem. Os dois saíam por ali. Sempre juntos, sempre à mesma hora."',
         primeiro: 'z-2'
       },
       {
         id: 'z-3', rotulo: 'O que aconteceu com o menino?', x: 16, y: 64,
-        texto: 'Ela conta rápido, sem pausas: o menino apareceu no portão às quatro da tarde querendo brincar na água; o Zelão mandou ele embora; vinte minutos depois o portão abriu outra vez e ninguém viu quem entrou. Ela não viu o menino sair. Ela também não fez questão de ver. "Eu tinha quatro filhos naquele portão", ela diz, "e nenhum deles precisa do meu heroísmo."',
+        texto: 'Ela conta rápido, sem pausas e sem olhar para você, como quem recita uma coisa ensaiada: o menino apareceu no portão às quatro da tarde querendo brincar na água; o Zelão mandou ele embora; vinte minutos depois o portão abriu outra vez e ninguém viu quem entrou. Ela não viu o menino sair. Também não fez questão de ver. "Eu tinha quatro filhos naquele portão", ela diz, e pela primeira vez encosta os dois punhos na mesa, "e nenhum deles precisa do meu heroísmo."',
         primeiro: 'z-3'
       },
       {
         id: 'z-4', rotulo: 'Conte sobre a fotografia.', x: 16, y: 82,
-        texto: '"A fotografia. Existia uma fotografia na parede da prefeitura, com todo mundo em cima da comporta." Ela some trinta segundos. "O Tarcísio guardou uma cópia. Anos depois ele me deu, falando que não aguentava mais olhar aquilo toda vez que batesse na porta do açude." Ela aponta com o queixo para a geladeira.'
+        texto: '"A fotografia. Existia uma fotografia na parede da prefeitura, com todo mundo em cima da comporta." Ela some trinta segundos atrás da porta e volta com um envelope de pão, do qual tira uma cópia dura e amarelada. "O Tarcísio guardou uma. Anos depois ele me deu, falando que não aguentava mais olhar aquilo toda vez que batesse na porta do açude." Ela empurra o envelope pela mesa, com o queixo apontado para a geladeira, como se o lugar certo de guardar fosse ali.'
       },
       {
         id: 'z-5', rotulo: 'Por que ninguém pergunta mais?', x: 16, y: 93,
-        texto: '"Porque perguntar dá trabalho e Brejinho é pequeno." Ela encara você pela primeira vez. "Você não é de daqui. Se sair daqui com essa história, a Marieta morre sem ter falado com ninguém. Ou pior: morre depois de ter falado, e aí vão saber que ela falou."'
+        texto: '"Porque perguntar dá trabalho e Brejinho é pequeno." Ela encara você pela primeira vez, e agora não desvia os olhos. "Você não é de daqui. Se sair daqui com essa história, a Marieta morre sem ter falado com ninguém. Ou pior: morre depois de ter falado, e aí vão saber que ela falou — e aí quem vai pagar é o Zé, é a neta dela, é todo mundo que ficou."'
       }
     ]
   },
@@ -310,20 +371,21 @@ export const CENAS = [
     hora: '17h05 — fim de tarde',
     classe: 'bg-cemiterio',
     legenda: 'Dezoito lápides. Uma delas é nova demais.',
-    texto: 'O cemitério fica atrás da capela, num terreiro que foi capim e virou terra batida. Dezoito lápides para duzentos e cinco moradores. Nenhuma é do menino. Todas as datas são antigas, excepto uma, e essa é de cimento novo.',
+    texto: 'O cemitério fica atrás da capela, num terreiro que foi capim e virou terra batida de tanto pisar. Dezoito lápides para duzentos e cinco moradores. Nenhuma é do menino. Todas as datas são antigas, exceto uma — e essa é de cimento novo, sem mato nenhum em volta.',
+    perigo: { entidade: 'lavadeira', limite: 3 },
     hotspots: [
       {
         id: 'k-lapide', rotulo: 'Cimento novo', x: 30, y: 58,
-        texto: 'Um canteiro velho com um tampo de cimento ainda claro, curvado na borda de quem assentou com pressa. A placa é de mármore sem epitáfio: só "IN MEMORIAM" e uma data de setembro de 1997. Três meses antes de o menino entrar na água. O nome foi raspado, e o raspado é mais antigo que a terra ao redor.',
-        dá: 'c-lapide'
+        texto: 'Um canteiro antigo com um tampo de cimento ainda claro, a borda curvada para fora — quem assentou tinha pressa e não se deu ao trabalho de molhar a régua. A placa de mármore está sem epitáfio: só "IN MEMORIAM" e uma data de setembro de 1997, três meses antes de o menino entrar na água. Onde ficava o nome, a pedra foi raspada em círculo, e o raspado é mais novo que a terra em volta. Sobraram duas iniciais: O. — —.',
+        dá: 'c-lapide', atrai: true
       },
       {
         id: 'k-nome', rotulo: 'Lápide dos Oliveira', x: 70, y: 42,
-        texto: 'Uma lápide pequena com dois nomes: Tarcísio Oliveira, 1949. E embaixo, riscado de leve, quase apagado, outro nome raspado da mesma forma que a placa de IN MEMORIAN. Quem raspa nome de lápide está passando a vida olhando a mesma pedra.'
+        texto: 'Uma lápide pequena e inclinada para a esquerda pelo tempo, com um nome recente: Tarcísio Oliveira, 1949. Abaixo dele, onde deveria estar o segundo nome da família, há uma mancha raspada de leve, quase apagada, com a mesma mão e a mesma pressa da placa de IN MEMORIAM. Quem raspa nome de lápide passa a vida passando por esta pedra.'
       },
       {
         id: 'k-muro', rotulo: 'Muro do fundo', x: 88, y: 74,
-        texto: 'O muro dos fundos dá para a estrada de baixo. Na terra batida encostada nele, marcas de pneu fresco: banda larga, com as nervuras marcadas de fora para dentro. O mesmo desenho de pneu que você viu na porta da casa de bombas. O carro que passou aqui parou perto demais do muro para ser passeio.'
+        texto: 'O muro dos fundos é de tijolo furado, com mato nascendo nas juntas, e dá para a estrada de baixo. Na terra batida encostada nele há marcas de pneu fresco: banda larga, com as nervuras marcadas de fora para dentro, e as duas impressões parando no mesmo ponto, rente ao muro. É o mesmo desenho da porta da casa de bombas. Um carro parou aqui, de marcha à ré, perto demais do muro para ser passeio.'
       }
     ]
   },
@@ -334,27 +396,36 @@ export const CENAS = [
     classe: 'bg-oficina',
     legenda: 'A porta está aberta. O rádio toca. Ninguém atende.',
     texto: 'A oficina ocupa o térreo de uma casa de tijolo aparente com um elevador hidráulico no fundo e um jeep em cima dele, de frente para a rua, coberto com lona. O rádio toca uma estação que não pega direito. Alguém pôs um balde embaixo do carro.',
+    perigo: { entidade: 'cao', limite: 5 },
+    bloqueio: {
+      exige: ['c-chave'],
+      texto: 'O portão lateral da oficina está trancado com um cadeado de serviço antigo. A chave de latão de cabeça quadrada que estava no chaveiro de pregos da casa de bombas é a única que entra nele.'
+    },
     hotspots: [
       {
         id: 'f-balde', rotulo: 'Balde embaixo do jeep', x: 46, y: 74,
-        texto: 'Um balde preto sob o eixo dianteiro. Dentro, meio copo de líquido escuro e um pano com marcas de graxa. Você levanta o pano com a ponta do sapato: na borda, um resíduo claro e-hard que não é graxa. Parece lama. Depois de vinte e oito anos, lama do açude não escorre de dentro de um jeep guardado.',
+        texto: 'Um balde preto embaixo do eixo dianteiro, com a alça caída para o lado. Dentro, um dedo de líquido escuro e um pano encardido de graxa. Você levanta o pano com a ponta do sapato: na borda, colado ao metal, um resíduo claro e áspero que não é graxa nem barro de estrada. É lama fina, de fundo de represa. Depois de vinte e oito anos, lama de açude não escorre de dentro de um jeep guardado.',
         exigePistas: 3,
         exigeTexto: 'Você está olhando sem saber o que procura. Volte quando a pasta tiver algo.'
       },
       {
         id: 'f-radio', rotulo: 'Rádio da oficina', x: 22, y: 34,
-        texto: 'Uma rádio de pilhas em cima do balcão, com o volume baixo demais para quem quer ouvir. A pilha está fraca e a música tem aquele intervalo de chiado que ninguém comuta mais. Alguém deixa isso ligado a noite inteira para não ouvir o silêncio.'
+        texto: 'Um rádio de pilhas em cima do balcão, ao lado de uma caneca com café secado no fundo. O volume está baixo demais para quem quer ouvir e alto demais para quem quer dormir. A pilha está fraca: a música afina e alarga no meio das frases, e entre uma música e outra entra aquele chiado comprido que ninguém mais sintoniza. Alguém deixa isso ligado a noite inteira para não ter que escutar o próprio silêncio.',
       },
       {
         id: 'f-foto', rotulo: 'Foto de parede', x: 76, y: 30,
-        texto: 'Uma fotografia emoldurada: a equipe da concessionária de energia em cima da comporta, na inauguração, com bandeirinha. Um dos homens está no canto, meio fora da foto, com as mãos no bolso. O rosto dele não foi raspado nesta. Ainda dá para ver que é o mesmo da fotografia do jornal.',
+        texto: 'Uma fotografia emoldurada, com poeira dentro do vidro: a equipe da concessionária de energia de pé sobre a comporta, na inauguração, com uma bandeirinha esticada à mão. Um dos homens está no canto, meio fora do quadro, com as mãos no bolso e o queixo baixo. O rosto dele não foi raspado nesta cópia. Dá para ver o mesmo corte de cabelo e a mesma postura de ombros da silhueta raspada da fotografia do jornal.',
         exigeExaminada: ['z-4'],
         exigeTexto: 'Você não tem com o que comparar ainda. Dona Zulmira tem uma cópia daquela outra fotografia.'
       },
       {
         id: 'f-caixa', rotulo: 'Caixa de sapato', x: 62, y: 60,
-        texto: 'Uma caixa de sapato em cima do balcão, com o nome de uma marca de calçado de 1997. Dentro, não há sapato: há uma fita VHS de trinta minutos, sem etiqueta, e uma lupa de leitura. As duas coisas estão fora de ordem junto, como se tivessem sido guardadas à pressa por alguém que não sabia qual delas importava mais.',
-        dá: 'c-vhs'
+        texto: 'Uma caixa de sapato em cima do balcão, com o nome de uma marca de calçado que fechou em 1997 e a tampa torta por ter sido fechada à força. Mexida de leve, chocalha: não tem sapato. Está presa por um elástico grosso e há poeira na tampa, mas nenhuma poeira no elástico.',
+        abre: {
+          verbo: 'Tirar o elástico e abrir a caixa',
+          texto: 'Dentro não há sapato: há uma fita VHS de trinta minutos, sem etiqueta, com o carimbo gasto do jornal "O BREJINHO" nas costas, e uma lupa de leitura de aumento pequeno. As duas coisas estão jogadas juntas, fora de ordem, como se alguém as tivesse guardado à pressa sem saber qual das duas importava mais.',
+          dá: 'c-vhs'
+        }
       }
     ]
   },
@@ -365,22 +436,30 @@ export const CENAS = [
     classe: 'bg-jornal',
     legenda: 'O chão fede a tinta velha. Nuno não está.',
     texto: 'O jornal ocupa o térreo de uma casa de dois andares com a escada do primeiro andar lacrada por dentro. A máquina de escrever está na mesa com uma folha encaixada, sem começar a escrever nada. A luz está acesa. A cadeira está quente.',
+    bloqueio: {
+      exige: ['c-vhs'],
+      texto: 'A sede do jornal está fechada por dentro depois das nove, e Nuno não atende estranhos à noite. A caixa de sapato guardada na oficina tem o carimbo gasto do jornal nas costas — é a prova de que a fita passou por aqui, e é o que abre esta porta.'
+    },
     hotspots: [
       {
         id: 'n-foto', rotulo: 'Fotografia na parede', x: 62, y: 38,
-        texto: 'Um grupo de seis pessoas diante de uma comporta, flash direto, sombras duras. Um dos rostos tem um retângulo raspado com a unha. Atrás do grupo, na parede do fundo, um mapa da represa com uma área inteira riscada.',
+        texto: 'Um grupo de seis pessoas diante de uma comporta, flash direto, sombras duras caindo nas pernas. Cinco olham para a câmera; o sexto, de lado, com as mãos no bolso. O rosto desse sexto tem um retângulo raspado com a unha, e o papel levantou nas bordas do raspado. Atrás do grupo, na parede do fundo, um mapa da represa com uma área inteira riscada a caneta, e a área riscada é exatamente a que você viu debaixo d’água.',
         dá: 'c-foto',
         exigeExaminada: ['z-4'],
         exigeTexto: 'Você ainda não sabe o que procurar. Dona Zulmira guardou uma cópia dessa fotografia. Peça antes de vir.'
       },
       {
         id: 'n-acervo', rotulo: 'Acervo de 1998', x: 80, y: 64,
-        texto: 'Volume encadernado com elástico. 1998, número 41. A manchete ocupa meia página: "MENINO DE 9 ANOS SOME NO AÇUDE DE BREJINHO — Família deixa o caso após 72 horas". A outra meia página é propaganda de gado. Não há uma única foto do menino. Mas há uma assinatura no rodapé, com o nome do repórter.',
-        dá: 'c-recorte'
+        texto: 'Uma pilha de volumes encadernados na estante, com a lombada marcada a caneta: 1996, 1997, 1998. O de 1997 está faltando, e o vão que ele deixou está limpo, sem poeira, como se alguém tirasse aquele volume de vez em quando. O de 1998 está seguro por um elástico de borracha que já perdeu a força.',
+        abre: {
+          verbo: 'Abrir o volume de 1998',
+          texto: 'A manchete ocupa meia página, em corpo grande: "MENINO DE 9 ANOS SOME NO AÇUDE DE BREJINHO — Família deixa o caso após 72 horas". A outra meia página é propaganda de gado, com uma vaca de perfil. Não há uma única foto do menino, do açude ou da família. No rodapé, a assinatura do repórter reduzida a uma inicial — e a inicial não é de Nuno Salgado.',
+          dá: 'c-recorte'
+        }
       },
       {
         id: 'n-porta', rotulo: 'Porta dos fundos', x: 16, y: 70,
-        texto: 'Escada para o quintal, com uma grade no alto. A grade está trancada por fora com corrente nova — a mesma corrente fina do portão do açude. Do outro lado, marcas de pneu na terra: alguém saiu de carro pelo quintal e não pelo portão principal. O carro não estava no pátio quando você chegou.'
+        texto: 'Escada de seis degraus para o quintal, com uma grade de ferro no alto. A grade está trancada por fora com corrente fina e engraxada — a mesma corrente do portão do açude, do mesmo rolo. Do outro lado, na terra, marcas de pneu de banda larga apontando para a rua de trás: alguém saiu de carro pelo quintal e não pelo portão principal. O carro não estava no pátio quando você chegou, e a chave do cadeado não está aqui.',
       }
     ]
   },
@@ -391,25 +470,35 @@ export const CENAS = [
     classe: 'bg-delegacia',
     legenda: 'A luz da sala fica acesa o dia inteiro, por hábito.',
     texto: 'A delegacia é uma sala com três carteiras, um ventilador de teto que gira devagar demais e um arquivo de aço com quatro gavetas. Não há ninguém. O ventilador está ligado. Na parede, um mapa da região com um círculo vermelho em volta do açude.',
+    bloqueio: {
+      exige: ['c-pneus'],
+      texto: 'Depois das dezoito horas a delegacia fecha e a porta fica com cadeado por fora; o plantão não abre para curioso. A meia-impressão de pneu de banda larga na soleira da casa de bombas não é prova de nada — mas é o que faz o plantão girar a chave.'
+    },
     hotspots: [
       {
         id: 'g-mapa', rotulo: 'Mapa da parede', x: 26, y: 30,
-        texto: 'Mapa da região com o açude circulado em vermelho e, ao lado, um número de processo escrito a caneta: 97/4412. O círculo foi feito de uma vez só, com força, e depois reforçado. Quem reforça um círculo vermelho nessa parede queria que a pergunta ficasse na parede antes de virar dúvida de alguém.'
+        texto: 'Mapa da região com o açude circulado em vermelho e, ao lado, um número de processo escrito a caneta: 97/4412. O círculo foi feito de uma vez só, com força, e depois reforçado por cima até o papel brilhar. Alguém fez e refez esse círculo na parede — queria que a pergunta ficasse ali, à vista, antes de virar dúvida de qualquer um que entrasse.'
       },
       {
         id: 'g-arquivo', rotulo: 'Arquivo de aço', x: 58, y: 58,
-        texto: 'A gaveta do ano 1997 está travada. Dentro, um maço de processos esmagados de um jeito que ninguém organiza:Leaf. Você folheia até o número 97/4412. Não é o processo do menino. É o processo do fechamento do portão.',
-        dá: 'c-processo'
+        texto: 'A gaveta de 1997 tem trava de mola e uma etiqueta de papelão desbotada, com a letra de alguém que já morreu. Está travada — e a trava não cede com puxão: cede com motivo. O arquivo é da polícia.',
+        abre: {
+          verbo: 'Destravar e abrir a gaveta de 1997',
+          texto: 'A mola solta e a gaveta abre meio palmo. Dentro, os processos estão empilhados de lado, esmagados, como se alguém tivesse fechado a gaveta com pressa uma única vez e nunca mais aberto. Você acha a capa 97/4412 sem procurar muito — e é aí que entende: não é o processo do menino. É o processo do fechamento do portão.',
+          dá: 'c-processo'
+        },
+        exigePistas: 6,
+        exigeTexto: 'A gaveta de 1997 está travada, e o arquivo é da polícia. Você não força isso com as mãos vazias: volte quando a pasta tiver corpo o suficiente para justificar um pedido por escrito.'
       },
       {
         id: 'g-patio', rotulo: 'Pátio dos fundos', x: 84, y: 40,
-        texto: 'Pátio de terra batida com um jeep estacionado, capota limpa, chaves no porta-luvas. Você abre o porta-luvas. Dentro, o Manual de Identificação veicular de 1997 e uma folha de papel dobrada. A folha tem o formato exato dos papéis que se preenchem à mão quando um fato chega à noite.',
+        texto: 'Pátio de terra batida com um jeep estacionado de ré, capota limpa, chaves esquecidas no porta-luvas. Você abre a porta e o cheiro é de carro que dorme ao relento: borracha morna e poeira. Dentro do porta-luvas, o Manual de Identificação veicular de 1997 e uma folha de papel dobrada em três. A folha tem o formato exato dos papéis que se preenchem à mão quando um fato chega à noite — tem o carimbo do horário e um campo de observações em branco.',
         exigeExaminada: ['z-2'],
         exigeTexto: 'Você não tem motivo para estar revirando um carro de polícia. Precisa ouvir primeiro por que esse carro era importante.'
       },
       {
         id: 'g-vitrine', rotulo: 'Moldura de avisos', x: 36, y: 80,
-        texto: 'Uma moldura de vidro com os avisos deSchema e horários de plantão. Num deles, escrito à mão a caneta com letra de quem tem pressa: "qualquer coisa do açude, me ligar antes de mandar alguém". O aviso é de 2004. Dezanove anos depois do afogamento, e a mesma pessoa ainda estava com medo do que a água podia fazer sozinha.'
+        texto: 'Uma moldura de vidro com os avisos de serviço e os horários de plantão, presos por percevejos. Num deles, escrito à mão a caneta, com letra de quem escreve de pé com pressa: "qualquer coisa do açude, me ligar antes de mandar alguém". O papel está amarelado e o aviso é de 2004. Dezenove anos depois do afogamento, e a mesma pessoa ainda tinha medo do que a água podia fazer por conta própria.',
       }
     ]
   },
@@ -420,10 +509,15 @@ export const CENAS = [
     classe: 'bg-torre',
     legenda: 'Ninguém sobe em torre de caixa-d’água à meia-noite. Ninguém.',
     texto: 'A torre fica no ponto mais alto de Brejinho e é a única coisa que dá para ver o açude inteiro de cima. Você subiu porque Marieta disse, nos quarenta e sete segundos, "suba". Agora está com o gravador na mão e a cidade lá embaixo, escura e obediente.',
+    perigo: { entidade: 'afogado', limite: 3 },
+    bloqueio: {
+      deducoes: ['d-arrasto', 'd-or-dem'],
+      texto: 'A escada da torre está lacrada com uma corrente fina e um cadeado, e ninguém de Brejinho te daria a chave sem motivo. A Marieta disse "suba" — mas subir com o caderno meio escrito não muda nada. Volte quando tiver desmontado, com pistas, o que aconteceu no portão às dezesseis e trinta.'
+    },
     hotspots: [
       {
-        id: 't-gravador', rotulo: 'Gravador', x: 28, y: 56,
-        texto: 'O gravador tem seis minutos e quarenta segundos que não vieram do cartão de Marieta. Voz de homem, respirando, gravando no escuro: "...o portão tá aberto, o moleque entrou sozinho, eu não encostei nele, ce fala pro delegado que o moleque entrou sozinho..." A gravação para no meio de uma inspiração. Depois, três minutos de silêncio absoluto. Depois, uma voz de mulher dizendo apenas "Tarcísio". E a gravação termina.'
+        id: 't-gravador', rotulo: 'Gravador', x: 28, y: 56, atrai: true,
+        texto: 'O gravador tem seis minutos e quarenta segundos que não vieram do cartão de Marieta. Voz de homem, perto do microfone, respirando entre as frases, gravando no escuro por medo de deixar por escrito: "...o portão tá aberto, o moleque entrou sozinho, eu não encostei nele, ce fala pro delegado que o moleque entrou sozinho..." A gravação para no meio de uma inspiração e a fita faz aquele estalo de botão. Depois, três minutos de silêncio absoluto. Depois, uma voz de mulher, muito perto, sem susto, dizendo apenas "Tarcísio". E a gravação termina.'
       },
       {
         id: 't-silhueta', rotulo: 'Silhueta no corrimão', x: 74, y: 28,
@@ -525,7 +619,7 @@ export const FINAIS = {
     classe: 'final-medio',
     texto: [
       'Você desce da torre, volta à casa da Dona Zulmira e põe o cartão de memória na mesa, ao lado do copo. Dona Zulmira olha e diz que você devolveu a única coisa que aquela mulher queria que devolvesse. Depois pergunta o que você quer de verdade. Você quer saber por que a Marieta filmou a casa do Tarcísio em setembro de 1997, e Dona Zulmira responde que a Marieta não filmou: alguém filmou ela.',
-      'A Marieta era da partida de thanksgiving da concessionária. Foi a única do grupo que não subiu para a sala de comando quando a ordem de fechar o portão foi lida, e a única que ficou na vila antiga até a água cobrir o piso da cozinha. Ela viu quem entrou na água. Ela nunca disse isso em voz alta — nem quando o delegado arquivou em 72 horas, nem quando o jornal publicou a meia página, nem quando ganhou a loteria e foi embora.',
+      'A Marieta era da festa de fim de ano da concessionária. Foi a única do grupo que não subiu para a sala de comando quando a ordem de fechar o portão foi lida, e a única que ficou na vila antiga até a água cobrir o piso da cozinha. Ela viu quem entrou na água. Ela nunca disse isso em voz alta — nem quando o delegado arquivou em 72 horas, nem quando o jornal publicou a meia página, nem quando ganhou a loteria e foi embora.',
       'Ela estava morrendo e não queria ser a heroína de ninguém. Queria que um estranho de fora entregasse um relato que ninguém em Brejinho tivesse coragem de receber. Você acaba de fazer exatamente o que ela pediu — devolveu a fita e não fez pergunta óbvia.',
       'Dezoito meses depois, um inquérito que não é de Brejinho pede depoimento de uma testemunha protegida cujo nome não aparece. O depoimento é de vinte e uma páginas e não diz quase nada. Mas no anexo, colado à última folha, há um desenho feito a lápis num guardanapo de lanchonete: uma casa com uma janela, uma boia e um menino entrando na água por vontade própria. É o mesmo desenho que estava dentro do frasco. Marieta guardou o caderno do menino a vida inteira e você levou isso embora sem perceber.'
     ]

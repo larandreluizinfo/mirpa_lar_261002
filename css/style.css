@@ -250,6 +250,51 @@ body { position: relative; }
   color: #f0e9e4;
 }
 
+/* barra de presença: a coisa que anda por perto */
+.ameaca {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 150px;
+  flex: 0 1 auto;
+}
+
+.ameaca[hidden] { display: none; }
+
+.ameaca__nome {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sangue-claro);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ameaca__trilha {
+  display: block;
+  height: 5px;
+  background: var(--carvao);
+  border: 1px solid var(--borda);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.ameaca__barra {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--agua), var(--sangue));
+  transition: width 260ms ease;
+}
+
+.ameaca.perto { animation: ameaca-pulsa 900ms ease-in-out infinite; }
+
+@keyframes ameaca-pulsa {
+  0%, 100% { filter: none; }
+  50%      { filter: drop-shadow(0 0 8px rgba(142, 43, 40, 0.85)); }
+}
+
 /* ---------- Palco ---------- */
 
 .palco {
@@ -372,6 +417,14 @@ body { position: relative; }
 
 .hotspot--visto { animation: none; opacity: 0.34; }
 .hotspot--visto::after { background: var(--texto-tenue); }
+
+.hotspot--recipiente { border-style: dashed; }
+.hotspot--recipiente::after { box-shadow: 0 0 0 3px rgba(74, 107, 120, 0.28); }
+
+.hotspot--aberto { animation: none; border-color: var(--agua); }
+.hotspot--aberto::after { background: var(--agua); opacity: 0.95; }
+
+[data-arte].aberto { filter: drop-shadow(0 0 4px rgba(74, 107, 120, 0.85)); }
 
 .hotspot--novo { border-color: var(--sangue-claro); animation: pulsar-novo 1.1s ease-in-out infinite; }
 
@@ -531,6 +584,18 @@ body { position: relative; }
   margin-bottom: 4px;
 }
 
+.painel__dica {
+  margin-top: 16px;
+  padding: 10px 13px;
+  border-left: 2px solid var(--agua);
+  background: rgba(74, 107, 120, 0.09);
+  font-family: var(--serif);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--texto-fraco);
+  font-style: italic;
+}
+
 .painel__acoes { margin-top: 26px; display: flex; flex-direction: column; gap: 9px; }
 
 .opcao {
@@ -607,6 +672,24 @@ body { position: relative; }
   border-color: #454b54;
   color: var(--texto);
 }
+
+.mapa button.trancada {
+  border-style: dashed;
+  color: var(--texto-tenue);
+  opacity: 0.62;
+  cursor: not-allowed;
+}
+
+.mapa button.trancada::after {
+  content: ' · trancada';
+  font-size: 0.6rem;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: var(--sangue);
+  opacity: 0.85;
+}
+
+.mapa button.trancada:hover { color: var(--texto-fraco); border-color: #3a3f47; }
 
 /* ---------- Folhas (caderno / deduções) ---------- */
 
@@ -800,6 +883,15 @@ body { position: relative; }
 /* ---------- Final ---------- */
 
 .tela--final { padding: 0; background: var(--preto); }
+
+.tela--morte {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(142, 43, 40, 0.2), transparent 55%),
+    var(--preto);
+}
+
+.tela--morte .final__selo { border-color: var(--sangue); color: var(--sangue-claro); }
+.tela--morte .final p:first-of-type::first-letter { color: var(--sangue-claro); }
 
 .final {
   flex: 1;

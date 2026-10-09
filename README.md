@@ -47,6 +47,26 @@ homem.
 **Decidir.** Só na torre. Cada escolha final exige as deduções que a sustentam —
 as demais ficam visíveis, com o motivo da bloqueio.
 
+## Portas, recipientes e o que caça
+
+**Portas trancadas.** No começo só quatro lugares estão abertos. Os outros cinco
+(casa de bombas, oficina, jornal, delegacia e torre) têm cadeado, e cada cadeado
+pede uma pista ou uma dedução específica. O botão trancado no mapa explica o que
+falta. A casa de bombas abre com o que Dona Zulmira guarda; a oficina, com a chave
+de latão; o jornal, com a fita VHS; a delegacia, com a impressão de pneu; a torre,
+só depois de duas deduções.
+
+**Coisas que abrem.** Alguns objetos são recipientes: o frasco dentro da boia, a
+lona sobre a lancha, a caixa de sapato, o volume encadernado de 1998 e a gaveta
+trancada de 1997. Você primeiro vê o objeto fechado; só ao abrir é que a pista sai.
+
+**O que anda por perto.** Três coisas caçam você: O Afogado (na água e na torre),
+A Lavadeira (no cemitério) e A Coisa do Portão (na casa de bombas e na oficina).
+Cada ação num desses lugares enche uma barra de Presença; quando ela chega ao fim,
+a coisa aparece e você tem uma única chance: uma leitura certa te deixa escapar,
+uma errada te mata. **Ser pego é voltar do começo** — o save é apagado e a pasta
+volta vazia, como se você nunca tivesse entrado em Brejinho.
+
 ## Estrutura
 
 ```

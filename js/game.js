@@ -1,7 +1,7 @@
 /* O Último Relato — motor do jogo */
 
 import {
-  CREDITOS, PISTAS, DEDUCOES, SUSPEITOS, CENAS, PRIMEIROS, FINAIS, EPILOGO
+  CREDITOS, PISTAS, DEDUCOES, SUSPEITOS, CENAS, PRIMEIROS, FINAIS, EPILOGO, ENTIDADES
 } from './data.js';
 import { Ambiente } from './audio.js';
 import { desenhar } from './arte.js';
@@ -9,14 +9,14 @@ import { desenhar } from './arte.js';
 const CHAVE_SAVE = 'ultimo-relato/v1';
 
 const OBJETIVOS = {
-  estrada: 'Alguém aqui já sabia que você viria. Vá até o açude e ouça Dona Zulmira.',
-  acude: 'Examine a margem e a parede submersa. Dona Zulmira sabe o que há aqui.',
-  bombas: 'A chave, a escala e a lancha estão todas nesta sala. Não deixe nada de fora.',
-  zulmira: 'Ela sabe mais do que contou. As respostas dela abrem o açude e a casa de bombas.',
-  cemiterio: 'Dezoito lápides para duzentos e cinco moradores. Nenhuma é do menino.',
-  oficina: 'O jeep do balde está guardado há tempo demais. Alguém filmou alguma coisa.',
-  jornal: 'O jornal tem uma fotografia. Dona Zulmira tem a cópia.',
-  delegacia: 'O processo 97/4412 está neste arquivo. A porta dos fundos fica trancada por fora.',
+  estrada: 'Vá ao açude e fale com Dona Zulmira. Cinco lugares de Brejinho estão trancados, e ela sabe de quem é a chave.',
+  acude: 'A margem só faz sentido depois de Dona Zulmira. Examine a parede submersa e a boia.',
+  bombas: 'A chave, a escala e a lancha estão nesta sala. A chave de latão também abre a oficina do Nenê.',
+  zulmira: 'Fale com todos os assuntos. O papel que ela guarda destranca a casa de bombas.',
+  cemiterio: 'Dezoito lápides para duzentos e cinco moradores. O muro dos fundos dá na estrada de baixo.',
+  oficina: 'A fita VHS na caixa de sapato é o cartão de visita da sede do jornal.',
+  jornal: 'A fotografia e o acervo de 1998. A fotografia pede a cópia que Dona Zulmira guardou.',
+  delegacia: 'O processo 97/4412 está no arquivo de aço — mas a gaveta de 1997 está trancada.',
   torre: 'Suba. Você já sabe quem tem as mãos. Falta descobrir quem mandou.'
 };
 
@@ -25,8 +25,11 @@ const estado = {
   cena: 'estrada',
   pistas: [],
   examinadas: [],
+  abertos: [],
   deducoes: [],
   visitadas: ['estrada'],
+  presenca: 0,
+  encontro: false,
   selecao: { a: null, b: null },
   final: null
 };
@@ -51,8 +54,33 @@ function temPista(id) { return estado.pistas.includes(id); }
 function examinou(id) { return estado.examinadas.includes(id); }
 function temDeducao(id) { return estado.deducoes.includes(id); }
 
+/* o que falta para destrancar uma cena; lista vazia = porta aberta */
+function faltasBloqueio(cena) {
+  const b = cena.bloqueio;
+  if (!b) return [];
+  const faltas = [];
+  (b.exige || []).forEach((p) => {
+    if (!temPista(p)) faltas.push(`a pista “${PISTAS[p].nome}”`);
+  });
+  (b.deducoes || []).forEach((d) => {
+    if (!temDeducao(d)) faltas.push(`a dedução “${DEDUCOES[d].titulo}”`);
+  });
+  return faltas;
+}
+
+function cenaLiberada(cena) {
+  return faltasBloqueio(cena).length === 0;
+}
+
 function cenaAtual() {
   return CENAS.find((c) => c.id === estado.cena);
+}
+
+function abriu(id) { return estado.abertos.includes(id); }
+
+function perigoAtual() {
+  const c = cenaAtual();
+  return c && c.perigo ? c.perigo : null;
 }
 
 function salvar() {
@@ -76,6 +104,9 @@ function carregar() {
     const dados = JSON.parse(localStorage.getItem(CHAVE_SAVE));
     if (!dados || !Array.isArray(dados.pistas)) return false;
     Object.assign(estado, dados, { selecao: { a: null, b: null } });
+    if (!Array.isArray(estado.abertos)) estado.abertos = [];
+    estado.presenca = 0;
+    estado.encontro = false;
     return !!cenaAtual();
   } catch {
     return false;
@@ -123,6 +154,102 @@ function susto() {
   ambiente.susto();
 }
 
+/* ---------- presença: as coisas que caçam ---------- */
+
+function atualizarPresenca() {
+  const caixa = $('presenca');
+  const p = perigoAtual();
+  if (!caixa) return;
+  if (!p || estado.encontro) { caixa.hidden = true; return; }
+  const ent = ENTIDADES[p.entidade];
+  const tot = p.limite || 4;
+  caixa.hidden = false;
+  $('presenca-nome').textContent = ent.nome;
+  caixa.title = `Presença: ${ent.nome}`;
+  const pct = Math.max(0, Math.min(100, Math.round((estado.presenca / tot) * 100)));
+  $('presenca-barra').style.width = `${pct}%`;
+  caixa.classList.toggle('perto', estado.presenca >= tot - 1);
+}
+
+function avancarPresenca(extra = 0) {
+  const p = perigoAtual();
+  if (!p || estado.encontro) return;
+  const tot = p.limite || 4;
+  estado.presenca += 1 + extra;
+  atualizarPresenca();
+  if (estado.presenca >= tot) {
+    encontro(p);
+  } else if (estado.presenca === tot - 1) {
+    torrada('Alguma coisa se aproximou. Errar a leitura agora é voltar do começo.');
+  }
+}
+
+function embaralhar(lista) {
+  const c = [...lista];
+  for (let i = c.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [c[i], c[j]] = [c[j], c[i]];
+  }
+  return c;
+}
+
+function encontro(p) {
+  estado.encontro = true;
+  const ent = ENTIDADES[p.entidade];
+  atualizarPresenca();
+  susto();
+
+  $('painel').querySelectorAll('.painel__corpo').forEach((n) => n.remove());
+  const painel = $('painel-texto');
+  painel.className = 'painel__texto painel__texto--titulo';
+  painel.textContent = ent.titulo;
+  painel.insertAdjacentElement('afterend', el('p', 'painel__corpo', ent.aproximacao));
+  painel.insertAdjacentElement('afterend', el('p', 'painel__dica', ent.dica));
+
+  const alvo = $('painel-acoes');
+  alvo.innerHTML = '';
+  alvo.appendChild(el('p', 'painel__pergunta', 'Está perto. O que você faz?'));
+
+  const opcoes = embaralhar([
+    ...ent.certo.map((t) => ({ t, ok: true })),
+    ...ent.errado.map((t) => ({ t, ok: false }))
+  ]);
+
+  opcoes.forEach((op) => {
+    const b = el('button', 'opcao', op.t);
+    b.type = 'button';
+    b.addEventListener('click', () => resolverEncontro(op.ok, ent));
+    alvo.appendChild(b);
+  });
+
+  renderCena(true);
+}
+
+function resolverEncontro(sobreviveu, ent) {
+  if (!sobreviveu) { morrer(ent); return; }
+  estado.encontro = false;
+  estado.presenca = 0;
+  atualizarPresenca();
+  ambiente.ambiente('achado');
+  painelTexto(ent.escape);
+  $('painel-acoes').innerHTML = '';
+  renderCena(true);
+}
+
+function morrer(ent) {
+  limparSave();
+  estado.encontro = false;
+  const alvo = $('morte-conteudo');
+  if (alvo) {
+    alvo.innerHTML = '';
+    alvo.appendChild(el('span', 'final__selo', ent.nome));
+    alvo.appendChild(el('h2', 'final__titulo', ent.morteTitulo));
+    ent.morteTexto.forEach((t) => alvo.appendChild(el('p', null, t)));
+  }
+  ambiente.susto();
+  mostrarTela('tela-morte');
+}
+
 /* acende o objeto desenhado que o hotspot aponta */
 function acenderArte(id, aceso) {
   const palco = document.getElementById('palco-ambiente');
@@ -159,6 +286,10 @@ function renderCena(manterPainel = false) {
     if (n) n.classList.add('aceso');
   });
   arteAnterior.clear();
+  estado.abertos.forEach((id) => {
+    const n = $('palco-arte').querySelector(`[data-arte="${id}"]`);
+    if (n) n.classList.add('aberto');
+  });
 
   const anteriores = [...document.querySelectorAll('.hotspot')].map((b) => b.dataset.id);
   const alvo = $('palco-hotspots');
@@ -175,6 +306,8 @@ const arena = document.getElementById('palco-ambiente');
     b.style.top = `${h.y}%`;
     b.setAttribute('aria-label', h.rotulo);
     if (examinou(h.id)) b.classList.add('hotspot--visto');
+    if (abriu(h.id)) b.classList.add('hotspot--aberto');
+    if (h.abre && !abriu(h.id)) b.classList.add('hotspot--recipiente');
     b.appendChild(el('span', 'hotspot__dica', h.rotulo));
     b.addEventListener('click', () => examinar(h.id));
 
@@ -194,6 +327,7 @@ const arena = document.getElementById('palco-ambiente');
   if (!manterPainel) painelVazio('Clique em um ponto da cena para examinar.');
   renderMapa();
   atualizarContadores();
+  atualizarPresenca();
   ambiente.definirCena(cena.id);
   salvar();
 }
@@ -210,8 +344,16 @@ function renderMapa() {
   const alvo = $('mapa-cenas');
   alvo.innerHTML = '';
   CENAS.forEach((c) => {
-    const b = el('button', c.id === estado.cena ? 'atual' : '', c.nome);
+    const trancada = !cenaLiberada(c);
+    const classes = [];
+    if (c.id === estado.cena) classes.push('atual');
+    if (trancada) classes.push('trancada');
+    const b = el('button', classes.join(' '), c.nome);
     b.type = 'button';
+    if (trancada) {
+      b.title = c.bloqueio.texto;
+      b.setAttribute('aria-disabled', 'true');
+    }
     b.addEventListener('click', () => irPara(c.id));
     alvo.appendChild(b);
   });
@@ -224,7 +366,26 @@ function atualizarContadores() {
 }
 
 function irPara(id) {
+  const cena = CENAS.find((c) => c.id === id);
+  if (!cena) return;
+
+  if (estado.encontro) {
+    ambiente.ambiente('erro');
+    torrada('Não há para onde correr agora.');
+    return;
+  }
+
+  if (!cenaLiberada(cena)) {
+    const faltas = faltasBloqueio(cena);
+    ambiente.ambiente('erro');
+    torrada(`${cena.bloqueio.texto}${faltas.length ? ` Falta: ${faltas.join(' e ')}.` : ''}`);
+    renderMapa();
+    return;
+  }
+
   estado.cena = id;
+  estado.presenca = 0;
+  estado.encontro = false;
   if (!estado.visitadas.includes(id)) estado.visitadas.push(id);
   ambiente.sussurro();
   mostrarTela('tela-jogo');
@@ -234,6 +395,7 @@ function irPara(id) {
 /* ---------- examinar ---------- */
 
 function examinar(id) {
+  if (estado.encontro) return;
   const cena = cenaAtual();
   const h = cena?.hotspots.find((x) => x.id === id);
   if (!h) return;
@@ -248,15 +410,52 @@ function examinar(id) {
     return;
   }
 
-  if (!examinou(id)) {
+  const novo = !examinou(id);
+  if (novo) {
     estado.examinadas.push(id);
     arteAnterior.add(id);
     ambiente.ambiente('pagina');
   }
 
+  if (novo) {
+    avancarPresenca(h.atrai ? 2 : 0);
+    if (estado.encontro) { renderCena(true); return; }
+  }
+
   $('painel').querySelectorAll('.painel__corpo').forEach((n) => n.remove());
 
   const bloco = h.primeiro ? PRIMEIROS[h.primeiro] : null;
+
+  if (h.abre && !abriu(id)) {
+    painelTexto(h.texto);
+    const alvo = $('painel-acoes');
+    alvo.innerHTML = '';
+    const b = el('button', 'opcao', h.abre.verbo);
+    b.type = 'button';
+    b.style.borderLeftColor = 'var(--sangue)';
+    b.addEventListener('click', () => abrirRecipiente(id));
+    alvo.appendChild(b);
+    ambiente.ambiente('pagina');
+    renderCena(true);
+    atualizarContadores();
+    return;
+  }
+
+  if (h.abre && abriu(id)) {
+    if (bloco) {
+      const painel = $('painel-texto');
+      painel.className = 'painel__texto painel__texto--titulo';
+      painel.textContent = bloco.titulo;
+      painel.insertAdjacentElement('afterend', el('p', 'painel__corpo', bloco.texto));
+      ambiente.ambiente('achado');
+    } else {
+      painelTexto(h.abre.texto);
+    }
+    if (cena.id !== 'torre') $('painel-acoes').innerHTML = '';
+    renderCena(true);
+    atualizarContadores();
+    return;
+  }
 
   if (bloco) {
     const painel = $('painel-texto');
@@ -277,6 +476,17 @@ function examinar(id) {
 
   renderCena(true);
   atualizarContadores();
+}
+
+function abrirRecipiente(id) {
+  const h = cenaAtual()?.hotspots.find((x) => x.id === id);
+  if (!h || !h.abre || abriu(id)) return;
+  estado.abertos.push(id);
+  if (!examinou(id)) estado.examinadas.push(id);
+  if (h.abre['dá']) adicionarPista(h.abre['dá']);
+  ambiente.ambiente('achado');
+  salvar();
+  examinar(id);
 }
 
 function painelTexto(texto) {
@@ -523,16 +733,22 @@ function comecar(continuando) {
   if (!continuando) {
     estado.pistas = ['c-fita'];
     estado.examinadas = [];
+    estado.abertos = [];
     estado.deducoes = [];
     estado.visitadas = ['estrada'];
     estado.cena = 'estrada';
+    estado.presenca = 0;
+    estado.encontro = false;
     estado.final = null;
   } else if (!carregar()) {
     estado.pistas = ['c-fita'];
     estado.examinadas = [];
+    estado.abertos = [];
     estado.deducoes = [];
     estado.visitadas = ['estrada'];
     estado.cena = 'estrada';
+    estado.presenca = 0;
+    estado.encontro = false;
   }
 
   if (!temPista('c-fita')) estado.pistas.unshift('c-fita');
@@ -589,6 +805,14 @@ function montar() {
     limparSave();
     location.reload();
   });
+
+  const reviver = $('btn-reviver');
+  if (reviver) {
+    reviver.addEventListener('click', () => {
+      limparSave();
+      location.reload();
+    });
+  }
 
   document.addEventListener('keydown', (ev) => {
     const emFolha = estado.tela === 'tela-caderno' || estado.tela === 'tela-deducoes';
