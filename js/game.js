@@ -2,9 +2,9 @@
 
 import {
   CREDITOS, PISTAS, DEDUCOES, SUSPEITOS, CENAS, PRIMEIROS, FINAIS, EPILOGO, ENTIDADES
-} from './data.js';
-import { Ambiente } from './audio.js';
-import { desenhar } from './arte.js';
+} from './data.js?v=2';
+import { Ambiente } from './audio.js?v=2';
+import { desenhar } from './arte.js?v=2';
 
 const CHAVE_SAVE = 'ultimo-relato/v1';
 

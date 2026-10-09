@@ -134,6 +134,14 @@ body { position: relative; }
 
 .titulo__aviso em { color: var(--texto-fraco); font-style: italic; }
 
+.titulo__versao {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--agua);
+  margin: -34px auto 40px;
+}
+
 .titulo__creditos {
   font-size: 0.78rem;
   color: var(--texto-tenue);
